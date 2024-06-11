@@ -8,7 +8,7 @@ interface AdapterInterface {
      * @param null|mixed $query
      * @param null|mixed $headers
      *
-     * @throws CVendor_Wago_Exception_HttpException
+     * @throws \Cresenity\Vendor\Wago\Exception\HttpException
      *
      * @return string
      */
@@ -19,7 +19,7 @@ interface AdapterInterface {
      * @param mixed      $parameters
      * @param null|mixed $headers
      *
-     * @throws CVendor_Wago_Exception_HttpException
+     * @throws \Cresenity\Vendor\Wago\Exception\HttpException
      */
     public function delete($url, $parameters, $headers = null);
 
@@ -28,7 +28,7 @@ interface AdapterInterface {
      * @param array|string $content
      * @param null|mixed   $headers
      *
-     * @throws CVendor_Wago_Exception_HttpException
+     * @throws \Cresenity\Vendor\Wago\Exception\HttpException
      *
      * @return string
      */
@@ -39,7 +39,7 @@ interface AdapterInterface {
      * @param array|string $content
      * @param null|mixed   $headers
      *
-     * @throws CVendor_Wago_Exception_HttpException
+     * @throws \Cresenity\Vendor\Wago\Exception\HttpException
      *
      * @return string
      */

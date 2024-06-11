@@ -18,28 +18,37 @@ use Cresenity\Vendor\Wago\Exception\InvalidTokenException;
 
 class GuzzleAdapter implements AdapterInterface {
     /**
-     * @var Client
+     * @var \GuzzleHttp\Client
      */
     protected $client;
 
     /**
-     * @var Response
+     * @var \GuzzleHttp\Psr7\Response
      */
     protected $response;
 
+    /**
+     * @var string
+     */
     protected $token;
 
+    /**
+     * @var bool
+     */
     protected $isLog;
 
+    /**
+     * @var null|string
+     */
     protected $logPath;
 
     /**
-     * @param mixed $options
+     * @param array $options
      */
     public function __construct(array $options = []) {
         $this->isLog = $options['logging'] ?? false;
         $this->logPath = $options['logPath'] ?? null;
-        $this->token = $options['token'] ?? null;
+        $this->token = $options['token'];
         $options = [];
 
         if ($this->isLog) {
@@ -69,6 +78,9 @@ class GuzzleAdapter implements AdapterInterface {
         $this->client = $client;
     }
 
+    /**
+     * @return array
+     */
     protected function getDefaultOptions() {
         $options = [
             'headers' => [
@@ -174,13 +186,13 @@ class GuzzleAdapter implements AdapterInterface {
     }
 
     /**
-     * @param mixed $e
+     * @param \Throwable $e
      *
      * @throws \Cresenity\Vendor\Wago\Exception\HttpException
      * @throws \Cresenity\Vendor\Wago\Exception\ApiException
      * @throws \Cresenity\Vendor\Wago\Exception\InvalidTokenException
      */
-    protected function handleError($e) {
+    protected function handleError(\Throwable $e) {
         if ($this->response == null) {
             throw $e;
         }

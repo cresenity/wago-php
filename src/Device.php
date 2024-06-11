@@ -21,6 +21,10 @@ class Device {
      */
     protected $client;
 
+    /**
+     * @param string $token
+     * @param array  $options
+     */
     public function __construct($token, $options = []) {
         $this->token = $token;
         $this->baseUri = $options['baseUri'] ?? 'https://wa-go.id/api/device/';
@@ -80,14 +84,25 @@ class Device {
         return $this->handleResponse($this->client->get('status'));
     }
 
+    /**
+     * @return array
+     */
     public function getWebhook() {
         return $this->handleResponse($this->client->get('webhook/get'));
     }
 
+    /**
+     * @return array
+     */
     public function unsetWebhook() {
         return $this->handleResponse($this->client->post('webhook/unset'));
     }
 
+    /**
+     * @param string $url
+     *
+     * @return array
+     */
     public function setWebhook($url) {
         $options = [
             'endpoint' => $url
@@ -97,7 +112,7 @@ class Device {
     }
 
     /**
-     * @param mixed $response
+     * @param string|array $response
      *
      * @return array
      */
@@ -115,6 +130,9 @@ class Device {
         return $response['data'] ?? [];
     }
 
+    /**
+     * @return \Cresenity\Vendor\Wago\Client
+     */
     public function getClient() {
         return $this->client;
     }

@@ -10,6 +10,9 @@ class Client {
      */
     protected $adapter;
 
+    /**
+     * @var string
+     */
     protected $baseUri;
 
     public function __construct(AdapterInterface $adapter, $baseUri) {
@@ -18,6 +21,12 @@ class Client {
         $this->baseUri = $baseUri;
     }
 
+    /**
+     * @param string $method
+     * @param string $queries
+     *
+     * @return string
+     */
     public function url($method, $queries = null) {
         $url = $this->baseUri . $method;
         $queryString = '';
@@ -38,6 +47,13 @@ class Client {
         return $url;
     }
 
+    /**
+     * @param string            $method
+     * @param null|array|string $parameters
+     * @param null|array        $headers
+     *
+     * @return array
+     */
     public function get($method, $parameters = null, $headers = null) {
         $url = $this->url($method, is_string($parameters) ? $parameters : null);
         $response = $this->adapter->get($url, is_array($parameters) ? $parameters : null, $headers);
@@ -46,6 +62,13 @@ class Client {
         return $result;
     }
 
+    /**
+     * @param string            $method
+     * @param null|array|string $parameters
+     * @param null|array        $headers
+     *
+     * @return array
+     */
     public function post($method, $parameters = null, $headers = null) {
         $url = $this->url($method);
         $response = $this->adapter->post($url, $parameters, $headers);
@@ -53,6 +76,13 @@ class Client {
         return $response;
     }
 
+    /**
+     * @param string            $method
+     * @param null|array|string $parameters
+     * @param null|array        $headers
+     *
+     * @return array
+     */
     public function put($method, $parameters = null, $headers = null) {
         $url = $this->url($method);
 
@@ -61,6 +91,13 @@ class Client {
         return $response;
     }
 
+    /**
+     * @param string            $method
+     * @param null|array|string $parameters
+     * @param null|array        $headers
+     *
+     * @return array
+     */
     public function delete($method, $parameters = null, $headers = null) {
         $url = $this->url($method);
         $response = $this->adapter->delete($url, $parameters, $headers);

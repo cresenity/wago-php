@@ -7,3 +7,5 @@
 /phpunit.xml
 /screenshots/
 /vendor/
+test.php
+*.log

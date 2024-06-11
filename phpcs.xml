@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<ruleset name="CFStandard">
+    <description>CF Coding Standard.</description>
+
+    <rule ref="PEAR">
+        <!-- Ignore Commenting -->
+        <exclude name="Internal.NoCodeFound"/>
+        <!-- FileComment -->
+        <exclude name="PEAR.Commenting.FileComment"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingAuthorTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingLicenseTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingLinkTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingVersion"/>
+        <!-- Commenting.ClassComment -->
+        <exclude name="PEAR.Commenting.ClassComment.Missing"/>
+        <exclude name="PEAR.Commenting.ClassComment.MissingCategoryTag"/>
+        <exclude name="PEAR.Commenting.ClassComment.MissingPackageTag"/>
+        <exclude name="PEAR.Commenting.ClassComment.MissingAuthorTag"/>
+        <exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag"/>
+        <exclude name="PEAR.Commenting.ClassComment.MissingLinkTag"/>
+        <exclude name="PEAR.Commenting.ClassComment.InvalidAuthors"/>
+
+
+        <!-- Commenting.FunctionComment -->
+        <exclude name="PEAR.Commenting.FunctionComment.Missing"/>
+        <!-- Temporary:NeedToResolved-->
+        <exclude name="PEAR.Commenting.FunctionComment.MissingParamComment"/>
+        <exclude name="PEAR.Commenting.FunctionComment.MissingParamName"/>
+        <exclude name="PEAR.Commenting.FunctionComment.SpacingAfterParamName"/>
+        <exclude name="PEAR.Commenting.FunctionComment.SpacingAfterParamType"/>
+        <exclude name="PEAR.Commenting.FunctionComment.ParamNameNoMatch"/>
+        <!-- START:Temporary:NeedToResolved-->
+        <exclude name="PEAR.Commenting.FunctionComment.MissingParamTag"/>
+        <exclude name="PEAR.Commenting.FunctionComment.MissingReturn"/>
+        <!-- END:Temporary:NeedToResolved-->
+        <!-- Commenting.DocComment -->
+        <exclude name="Generic.Commenting.DocComment.MissingShort"/>
+        <exclude name="Generic.Commenting.DocComment.TagValueIndent"/>
+        <exclude name="Generic.Commenting.DocComment.NonParamGroup"/>
+        <exclude name="Generic.Commenting.DocComment.ParamNotFirst"/>
+
+
+
+        <!-- Variable Naming Convetions-->
+        <exclude name="PEAR.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+        <exclude name="PEAR.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
+
+        <!-- Including File -->
+        <exclude name="PEAR.Files.IncludingFile.UseIncludeOnce"/>
+        <exclude name="PEAR.Files.IncludingFile.UseInclude"/>
+        <!-- Ignore Braces -->
+        <exclude name="PEAR.Commenting.FunctionComment.WrongStyle"/>
+        <exclude name="PEAR.Commenting.InlineComment.WrongStyle"/>
+
+        <!-- Ignore Braces -->
+        <exclude name="PEAR.Classes.ClassDeclaration.OpenBraceNewLine"/>
+        <exclude name="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"/>
+
+        <!-- Ignore complicated conventions-->
+        <exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
+        <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
+        <exclude name="PEAR.WhiteSpace.ScopeIndent.IncorrectExact"/>
+        <exclude name="Generic.Commenting.DocComment.LongNotCapital"/>
+        <exclude name="Generic.Commenting.DocComment.TagsNotGrouped"/>
+        <exclude name="Squiz.Commenting.DocCommentAlignment.SpaceAfterStar"/>
+        <exclude name="Squiz.Classes.ValidClassName.NotCamelCaps"/>
+        <exclude name="PEAR.Functions.FunctionCallSignature.Indent"/>
+        <exclude name="Generic.Files.LineLength.TooLong"/>
+        <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis"/>
+        <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+        <exclude name="PEAR.ControlStructures.MultiLineCondition.SpaceBeforeOpenBrace"/>
+        <exclude name="PEAR.ControlStructures.MultiLineCondition.SpacingAfterOpenBrace"/>
+        <exclude name="PEAR.ControlStructures.MultiLineCondition.Alignment"/>
+        <exclude name="PEAR.ControlStructures.MultiLineCondition.StartWithBoolean"/>
+        <exclude name="Generic.Commenting.DocComment.ContentAfterOpen"/>
+        <exclude name="Generic.Commenting.DocComment.ContentBeforeClose"/>
+
+        <!-- Ignore that already defined in PSR-->
+        <exclude name="PEAR.NamingConventions.ValidFunctionName.ScopeNotCamelCaps"/>
+
+        <exclude name="Generic.ControlStructures.InlineControlStructure.Discouraged"/>
+    </rule>
+
+    <rule ref="PSR2">
+        <!-- Files.IncludingFile -->
+        <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
+        <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
+        <!-- Ignore Braces -->
+        <exclude name="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
+        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+
+    </rule>
+    <exclude-pattern>*/src/Standards/*/Tests/*\.(inc|css|js)$</exclude-pattern>
+    <exclude-pattern>*/tests/Core/*/*\.(inc|css|js)$</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*\.(css|js)</exclude-pattern>
+    <exclude-pattern>*/*.blade.php</exclude-pattern>
+
+    <rule ref="Internal.NoCodeFound">
+        <severity>0</severity>
+    </rule>
+</ruleset>

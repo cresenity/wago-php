@@ -24,7 +24,7 @@ class Device {
     public function __construct($token, $options = []) {
         $this->token = $token;
         $this->baseUri = $options['baseUri'] ?? 'https://wa-go.id/api/device/';
-        $this->client = new Client(new GuzzleAdapter(['token' => $this->token]), $this->baseUri);
+        $this->client = new Client(new GuzzleAdapter($options + ['token' => $this->token]), $this->baseUri);
     }
 
     /**

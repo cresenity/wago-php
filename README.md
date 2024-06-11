@@ -6,5 +6,19 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/cresenity/wago-php.svg)](https://github.com/cresenity/wago-php/graphs/contributors)
 
 
-# wago-php
-The Official Wago PHP API Library
+**This library allows you to quickly and easily use the Wago Web API via PHP.**
+
+## Install Package
+
+`composer require cresenity/wago-php`
+
+## Usage
+
+```php
+<?php
+use Cresenity\Vendor\Wago\Wago;
+
+$wago = Wago::device('your-device-api-token');
+
+$wago->sendMessage('081xxxx', 'Hello');
+```

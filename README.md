@@ -22,5 +22,11 @@ $wago = Wago::device('your-device-api-token');
 
 $wago->sendMessage('081xxxx', 'Hello');
 ```
+
+## Documentation
+
+[Wago Documentation](https://wa-go.id/docs/api/device)
+
+
 # License
 [The MIT License (MIT)](LICENSE)

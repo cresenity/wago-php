@@ -1,0 +1,29 @@
+{
+    "name": "cresenity/wago-php",
+    "type": "library",
+    "description": "The Official Wago PHP API Library",
+    "keywords": ["wa-go", "api", "cresenity"],
+    "homepage": "https://wa-go.id",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Hery Kurniawan",
+        "email": "hery.cresenity@gmail.com",
+        "homepage": "https://github.com/heerrr"
+      }
+    ],
+    "require": {
+      "php": ">=7.4"
+    },
+    "autoload": {
+      "psr-4": { "Cresenity\\Vendor\\Wago\\": "src/" }
+    },
+    "autoload-dev": {
+      "psr-4": { "Cresenity\\Vendor\\Wago\\Tests\\": "tests/" }
+    },
+    "config": {
+      "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+  }

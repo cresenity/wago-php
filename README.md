@@ -22,3 +22,5 @@ $wago = Wago::device('your-device-api-token');
 
 $wago->sendMessage('081xxxx', 'Hello');
 ```
+# License
+[The MIT License (MIT)](LICENSE)
